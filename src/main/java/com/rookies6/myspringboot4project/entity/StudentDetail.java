@@ -15,21 +15,21 @@ import java.time.LocalDate;
 @Setter
 //Owner(주인) - FK(외래키)를 가진 쪽이 주인임
 public class StudentDetail {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "student_detail_id")
     private Long id;
-    
-    @Column(nullable = false)
+
+    @Column
     private String address;
-    
-    @Column(nullable = false)
+
+    @Column(nullable = false, unique = true)
     private String phoneNumber;
-    
+
     @Column(nullable = false, unique = true)
     private String email;
-    
+
     @Column
     private LocalDate dateOfBirth;
 
